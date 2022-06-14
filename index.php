@@ -34,9 +34,11 @@ var_dump($new_user);
 
 $new_user->addProductToCart($dog_food);
 $new_user->addProductToCart($brush);
-
-
 var_dump($new_user->cart);
+
+echo $new_user->getFinalPrice();
+
+
 
 ?>
 

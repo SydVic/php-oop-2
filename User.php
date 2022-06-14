@@ -27,5 +27,15 @@ class User {
   function addProductToCart($_product) {
     $this->cart[] = $_product;
   }
+
+  function getFinalPrice() {
+    $total_price = 0;
+    $final_price = $total_price;
+    foreach($this->cart as $item) {
+      $total_price += $item->price;
+    }
+    $final_price = $total_price - ($total_price / 100 * $this->discount);
+    return $final_price;
+  }
 }
 ?>
