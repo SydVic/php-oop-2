@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 require_once __DIR__ . "/Product.php";
 require_once __DIR__ . "/Food.php";
 require_once __DIR__ . "/Accessory.php";
+require_once __DIR__ . "/User.php";
 
 $dog_food = new Food("Crocchette Purina", 22.99, "Crocchette Cane Adulto con Manzo, Cereali e Verdure", "cane", 12);
 // var_dump($dog_food);
@@ -26,6 +27,17 @@ $products[] = $cat_food;
 $products[] = $brush;
 $products[] = $leash;
 // var_dump($products);
+
+$new_user = new User("Gino", "gino@gmail.com", true);
+$new_user->setDiscount();
+var_dump($new_user);
+
+$new_user->addProductToCart($dog_food);
+$new_user->addProductToCart($brush);
+
+
+var_dump($new_user->cart);
+
 ?>
 
 <!DOCTYPE html>

@@ -2,13 +2,14 @@
 class User {
   public $name;
   public $mail;
-  public $registered = false;
+  public $registered;
   public $cart = [];
-  private $discount;
+  protected $discount;
 
-  function __construct($_name, $_mail) {
+  function __construct($_name, $_mail, $_registered = false) {
     $this->name = $_name;
     $this->mail = $_mail;
+    $this->registered = $_registered;
   }
 
   public function setDiscount() {
@@ -17,6 +18,14 @@ class User {
     } else {
       $this->discount = 0;
     }
+  }
+
+  public function getDiscount() {
+    return $this->discount;
+  }
+
+  function addProductToCart($_product) {
+    $this->cart[] = $_product;
   }
 }
 ?>
