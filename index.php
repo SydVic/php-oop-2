@@ -63,6 +63,7 @@ echo $new_user->getFinalPrice();
         } ?>
     </div>
     <h3>Totale: <?php echo $new_user->getFinalPrice(); ?> &euro;</h3>
+    <p><?php echo $new_user->validatePayment(); ?></p>
   </div>
 </body>
 </html>

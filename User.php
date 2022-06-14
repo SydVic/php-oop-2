@@ -5,7 +5,7 @@ class User {
   public $registered;
   public $cart = [];
   protected $discount;
-  protected $valid_credit_card;
+  protected $valid_credit_card = false;
 
   function __construct($_name, $_mail, $_registered = false) {
     $this->name = $_name;
@@ -41,6 +41,14 @@ class User {
 
   function printCart($product) {
     return $product->printProductInfo();
+  }
+
+  function validatePayment() {
+    if ($this->valid_credit_card === true) {
+      return "pagamento acettato";
+    } else {
+      return "carta scaduta, prova un'altro metodo di pagamento";
+    }
   }
 }
 ?>
