@@ -5,6 +5,7 @@ class User {
   public $registered;
   public $cart = [];
   protected $discount;
+  protected $valid_credit_card;
 
   function __construct($_name, $_mail, $_registered = false) {
     $this->name = $_name;
@@ -36,6 +37,10 @@ class User {
     }
     $final_price = $total_price - ($total_price / 100 * $this->discount);
     return $final_price;
+  }
+
+  function printCart($product) {
+    return $product->printProductInfo();
   }
 }
 ?>

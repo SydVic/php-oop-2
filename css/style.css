@@ -5,13 +5,18 @@
   margin: 0 auto;
 }
 
-.product-container {
+.product-container,
+.cart-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.product-container {
   justify-content: space-between;
 }
 
 .card {
   max-width: 200px;
   border: 2px solid grey;
+  margin: 1rem;
 }

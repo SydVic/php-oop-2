@@ -37,9 +37,6 @@ $new_user->addProductToCart($brush);
 var_dump($new_user->cart);
 
 echo $new_user->getFinalPrice();
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +56,13 @@ echo $new_user->getFinalPrice();
         echo $product->printProductInfo();
       } ?>
     </div>
+    <h3>Carrello</h3>
+    <div class="cart-container">
+      <?php foreach($new_user->cart as $product) {
+          echo $new_user->printCart($product);
+        } ?>
+    </div>
+    <h3>Totale: <?php echo $new_user->getFinalPrice(); ?> &euro;</h3>
   </div>
 </body>
 </html>
