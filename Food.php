@@ -10,5 +10,18 @@ class Food extends Product {
     $this->animal = $_animal;
     $this->weight = $_weight;
   }
+
+  public function printProductInfo() {
+    return 
+    "
+    <div class='card'>
+      <h3>$this->name</h3> 
+      <p>$this->description</p> 
+      <p>Prodotto per: $this->animal</p> 
+      <h6>Peso: $this->weight kg</h6>
+      <h4>$this->price &euro;</h4>
+    </div>
+    ";
+  }
 }
 ?>

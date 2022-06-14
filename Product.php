@@ -9,5 +9,16 @@ class Product {
     $this->price = $_price;
     $this->description = $_description;
   }
+
+  public function printProductInfo() {
+    return 
+    "
+    <div class='card'>
+      <h3>$this->name</h3> 
+      <p>$this->description</p>
+      <h4>$this->price &euro;</h4>
+    </div>
+    ";
+  }
 }
 ?>

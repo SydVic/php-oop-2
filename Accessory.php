@@ -10,5 +10,18 @@ class Accessory extends Product {
     $this->category = $_category;
     $this->brand = $_brand;
   }
+
+  public function printProductInfo() {
+    return 
+    "
+    <div class='card'>
+      <h3>$this->name</h3>
+      <p>$this->description</p>
+      <p>Categoria: $this->category</p>
+      <h6>$this->brand</h6>
+      <h4>$this->price &euro;</h4>
+    </div>
+    ";
+  }
 }
 ?>
